@@ -1,0 +1,69 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Flask API Server",
+      "description": "A simple API with inverse and unstable endpoints"
+    },
+    "paths": {
+      "/inverse": {
+        "post": {
+          "summary": "Inverse the key-value pairs",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successfully inverted key-value pairs.",
+              "schema": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "/unstable": {
+        "get": {
+          "summary": "Unstable endpoint",
+          "responses": {
+            "200": {
+              "description": "Returns HAPPY.",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Returns UNHAPPY.",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
